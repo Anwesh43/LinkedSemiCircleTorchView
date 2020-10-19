@@ -232,4 +232,13 @@ class SemiCircleTorchView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SemiCircleTorchView {
+            val view : SemiCircleTorchView = SemiCircleTorchView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
