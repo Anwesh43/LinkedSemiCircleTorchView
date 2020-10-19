@@ -32,7 +32,7 @@ val backColor : Int = Color.parseColor("#BDBDBD")
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
-fun Float.divideScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())
+fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
 fun Float.sinify() : Float = Math.sin(this * Math.PI).toFloat()
 
 fun Canvas.drawArrowPathRect(sf4 : Float, tSize : Float, paint : Paint) {
@@ -61,7 +61,7 @@ fun Canvas.drawTiltedDirectionArrow(scale : Float, w : Float, h : Float, paint :
     val tSize : Float = size / 2
     save()
     translate(w / 2, h / 2)
-    rotate(90f * sf5)
+    rotate(rot * sf5)
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
