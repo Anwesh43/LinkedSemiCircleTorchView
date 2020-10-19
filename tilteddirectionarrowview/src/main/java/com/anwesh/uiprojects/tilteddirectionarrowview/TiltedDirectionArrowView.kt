@@ -209,4 +209,27 @@ class TiltedDirectionArrowView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TiltedDirectionArrowView) {
+
+        private val animator : Animator = Animator(view)
+        private val tda : TiltedDirectionArrow = TiltedDirectionArrow(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tda.draw(canvas, paint)
+            animator.animate {
+                tda.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tda.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
