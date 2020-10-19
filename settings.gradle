@@ -1,1 +1,1 @@
-include ':app', ':semicircletorchview'
+include ':app', ':semicircletorchview', ':tilteddirectionarrowview'

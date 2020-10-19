@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/LinkedSemiCircleTorchView.iml" filepath="$PROJECT_DIR$/LinkedSemiCircleTorchView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/semicircletorchview/semicircletorchview.iml" filepath="$PROJECT_DIR$/semicircletorchview/semicircletorchview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tilteddirectionarrowview/tilteddirectionarrowview.iml" filepath="$PROJECT_DIR$/tilteddirectionarrowview/tilteddirectionarrowview.iml" />
     </modules>
   </component>
 </project>
