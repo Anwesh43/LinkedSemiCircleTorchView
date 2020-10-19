@@ -207,4 +207,27 @@ class SemiCircleTorchView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SemiCircleTorchView) {
+
+        private val animator : Animator = Animator(view)
+        private val sct : SemiCircleTorch = SemiCircleTorch(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            sct.draw(canvas, paint)
+            animator.animate {
+                sct.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            sct.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
