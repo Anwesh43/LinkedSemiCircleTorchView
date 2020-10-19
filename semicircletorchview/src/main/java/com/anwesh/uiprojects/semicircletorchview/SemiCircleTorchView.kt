@@ -42,11 +42,11 @@ fun Canvas.drawTorchPath(scale : Float, r : Float, paint : Paint) {
     val path : Path = Path()
     path.moveTo(r, 0f)
     path.arcTo(RectF(-r, -r, r, r), 0f, 180f, false)
-    path.lineTo(-2 * r, -r)
-    path.lineTo(2 * r, -r)
+    path.lineTo(-2 * r, -2 * r)
+    path.lineTo(2 * r, -2 * r)
     path.lineTo(r, 0f)
     clipPath(path)
-    drawRect(RectF(-2 * r, -r * scale, 2 * r, 0f), paint)
+    drawRect(RectF(-2 * r, r - 3 * r * scale, 2 * r, r), paint)
     restore()
 }
 
@@ -65,9 +65,9 @@ fun Canvas.drawSemiCircleTorch(scale : Float, w : Float, h : Float, paint : Pain
     rotate(rot * sf6)
     paint.style = Paint.Style.STROKE
     drawArc(RectF(-r, -r, r, r), 0f, 180f * sf1, false, paint)
-    drawLine(-r, 0f, -r -r * sf2, -r * sf2, paint)
-    drawLine(-2 * r, -r, -2 * r + 4 * r * sf3, -r, paint)
-    drawLine(2 * r, -r, 2 * r - r * sf4, -r + r * sf4, paint)
+    drawLine(-r, 0f, -r -r * sf2, -2 * r * sf2, paint)
+    drawLine(-2 * r, -2 * r, -2 * r + 4 * r * sf3, -2 * r, paint)
+    drawLine(2 * r, -2 * r, 2 * r - r * sf4, -2 * r + 2 * r * sf4, paint)
     drawTorchPath(sf5, r, paint)
     restore()
 }
