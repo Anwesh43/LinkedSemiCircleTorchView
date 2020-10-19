@@ -3,13 +3,14 @@ package com.anwesh.uiprojects.linkedsemicircletorchview
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.anwesh.uiprojects.semicircletorchview.SemiCircleTorchView
+import com.anwesh.uiprojects.tilteddirectionarrowview.TiltedDirectionArrowView
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        SemiCircleTorchView.create(this)
+        TiltedDirectionArrowView.create(this)
         fullScreen()
     }
 }
