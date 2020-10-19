@@ -234,4 +234,13 @@ class TiltedDirectionArrowView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TiltedDirectionArrowView {
+            val view : TiltedDirectionArrowView = TiltedDirectionArrowView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
